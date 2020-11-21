@@ -26,13 +26,13 @@
 		top: calc( 100% - 80px); 
 		width: 30px;
 		border-radius: 25px;
-		justify-content: flex-start;
+		//justify-content: flex-start;
 	}
 	100%{
 		top: calc( 100% - 80px); 
 		width: calc( 100% - 80px );
 		border-radius: 25px;
-		justify-content: flex-start;
+		//justify-content: flex-start;
 	}
 }
 @keyframes fadeshareicon
@@ -84,6 +84,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	z-index: 100000000;
 }
 
 #dots
@@ -119,11 +120,11 @@
 }
 .dotsopen
 {
-	animation: fadeshareicon 1s ease-in forwards;
+	animation: fadeshareicon 1s ease-in both;
 }
 .messageopen
 {
-	animation: fademessage 1.5s cubic-bezier(0,.5,0,.5) 0.8s forwards;
+	animation: fademessage 1.5s cubic-bezier(0,.5,0,.5) 0.8s both;
 }
 .dotsclose
 {
@@ -131,10 +132,11 @@
 }
 .messageclose
 {
-	animation: fademessage 2s cubic-bezier(0,.5,0,.5) -0.75s reverse forwards;
+	animation: fademessage 2s cubic-bezier(0,.5,0,.5) -0.75s reverse both;
 }
 .exit
 {
+	font-family: 'Roboto';
 	font-size: 20px;
 	color: var(--maincolorforsharebutton);
 	background-color: white;
@@ -142,7 +144,7 @@
 	border-radius: 35px;
 	padding: 5px 9px;
 	margin: 0;
-	margin-left: -3px;
+	margin-left: 0px;
 	transition: all 0.4s;
 	display: inline-block;
 }
@@ -177,4 +179,16 @@
 .socialmedia:active
 {
 	cursor: pointer
+}
+
+@media( max-width: 990px )
+{
+	#socialmediabutton:hover #dots
+	{
+		transform: rotate(0deg);
+	}
+	
+}
+center {
+	
 }
