@@ -3,18 +3,18 @@ var colors = [
 ];
 var maincolor = getRandomUniqueColor();
 var hoverfoldercolor = maincolor - 2236962;
-document.documentElement.style.setProperty('--main', maincolor.toString(16) );
-document.documentElement.style.setProperty('--maincolorforsharebutton', maincolor.toString(16) );
-document.documentElement.style.setProperty('--hover-folder', hoverfoldercolor.toString(16) );
+document.documentElement.style.setProperty('--main', "#" + maincolor.toString(16) );
+document.documentElement.style.setProperty('--maincolorforsharebutton', "#" + maincolor.toString(16) );
+document.documentElement.style.setProperty('--hover-folder', "#" + hoverfoldercolor.toString(16) );
 
 var filecolor = getRandomUniqueColor();
 var hoverfilecolor = filecolor - 2236962;
-document.documentElement.style.setProperty('--file', filecolor.toString(16) );
-document.documentElement.style.setProperty('--hover-file', hoverfilecolor.toString(16) );
+document.documentElement.style.setProperty('--file', "#" + filecolor.toString(16) );
+document.documentElement.style.setProperty('--hover-file', "#" + hoverfilecolor.toString(16) );
 
 function compact()
 {
-	localStorage.setItem( "apphysicsstyle", "compact");
+	localStorage.setItem( "style", "compact");
 	setPadding( "item", "3px 0px", "var(--left-padding)");
 	setFontSize( "item", "calc( 0.75vw + 10px )" );
 	setFontSize( "arrow", "calc( 0.75vw + 6px )" );
@@ -25,9 +25,10 @@ function compact()
 	document.getElementsByClassName("stylebutton")[1].setAttribute( "class", "stylebutton currentstyle");
 }
 
+
 function relax()
 {
-	localStorage.setItem( "apphysicsstyle", "relaxed");
+	localStorage.setItem( "style", "relaxed");
 	setPadding( "item", "10px 0px", "var(--left-padding)");
 	setFontSize( "item", "calc( 0.75vw + 15px )" );
 	setFontSize( "arrow", "calc( 0.75vw + 12px )" );
@@ -37,10 +38,18 @@ function relax()
 	document.getElementsByClassName("currentstyle")[0].setAttribute( "class", "stylebutton");
 	document.getElementsByClassName("stylebutton")[0].setAttribute( "class", "stylebutton currentstyle");
 }
+
+function changeColor()
+{
+	var maincolor = getRandomColor();
+	document.documentElement.style.setProperty('--main', "#" + maincolor.toString(16) );
+	var hoverfoldercolor = maincolor - 2236962;
+	document.documentElement.style.setProperty('--hover-folder', "#" + hoverfoldercolor.toString(16) );
+}
 function getLocalStorage()
 {
-	console.log( localStorage.getItem( "apphysicsstyle") );
-	if( localStorage.getItem( "apphysicsstyle") == "compact" )
+	console.log( localStorage.getItem( "style") );
+	if( localStorage.getItem( "style") == "compact" )
 	{
 		compact();
 		return;
@@ -73,14 +82,30 @@ function setPadding( className, padding, paddingLeft )
 		items[i].style.paddingLeft = paddingLeft;
 	}
 }
-
+var removedColor;
 function getRandomUniqueColor()
 {
  	var index = Math.floor( Math.random() * colors.length );
 	var color = colors[index];
 	colors[index] = -1;
+	removedColor = color;
 	if( color == -1 )
 		return getRandomUniqueColor();
+	return color;
+}
+
+var lastColor = null;
+function getRandomColor()
+{
+	var index = Math.floor( Math.random() * colors.length );
+	var color = colors[index];
+	if( color == lastColor )
+		return getRandomColor();
+	if( color == -1 )
+	{
+		color = removedColor;		
+	}
+	lastColor = color;
 	return color;
 }
 
