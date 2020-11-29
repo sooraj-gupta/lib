@@ -156,7 +156,7 @@ var items = ' [ { "type": "d", "name": "Java", "content": [ { "type":"d", "name"
 						"type": "f", 
 						"name": "index.html",
 						"link": "https://github.com/sooraj-gupta/lib/blob/master/web/typewriterjs/index.html",
-						"local": "web/typewriter-master/index.html"
+						"local": "web/typewriterjs/index.html"
 					},
 					{
 						"type": "f", 

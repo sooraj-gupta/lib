@@ -1,0 +1,6 @@
+[submodule "typewriter-master"]
+	path = typewriter-master
+	url = https://github.com/sooraj-gupta/typewriterjs
+[submodule "web/typewriterjs"]
+	path = web/typewriterjs
+	url = https://github.com/sooraj-gupta/typewriterjs
