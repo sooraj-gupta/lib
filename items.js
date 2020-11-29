@@ -155,28 +155,28 @@ var items = ' [ { "type": "d", "name": "Java", "content": [ { "type":"d", "name"
 					{
 						"type": "f", 
 						"name": "index.html",
-						"link": "https://github.com/sooraj-gupta/lib/blob/master/web/typewriterjs/index.html",
+						"link": "https://github.com/sooraj-gupta/typewriterjs/index.html",
 						"local": "web/typewriterjs/index.html"
 					},
 					{
 						"type": "f", 
 						"name": "typewriter.css",
-						"link": "https://github.com/sooraj-gupta/lib/blob/master/web/typewriterjs/typewriter.css"
+						"link": "https://github.com/sooraj-gupta/typewriterjs/typewriter.css"
 					},
 					{
 						"type": "f", 
 						"name": "typewriter.js",
-						"link": "https://github.com/sooraj-gupta/lib/blob/master/web/typewriterjs/typewriter.js"
+						"link": "https://github.com/sooraj-gupta/typewriterjs/typewriter.js"
 					}, 
 					{
 						"type": "f", 
 						"name": "master.js",
-						"link": "https://github.com/sooraj-gupta/lib/blob/master/web/typewriterjs/master.js"
+						"link": "https://github.com/sooraj-gupta/typewriterjs/master.js"
 					},
 					{
 						"type": "f", 
 						"name": "settings.js",
-						"link": "https://github.com/sooraj-gupta/lib/blob/master/web/typewriterjs/settings.js"
+						"link": "https://github.com/sooraj-gupta/typewriterjs/settings.js"
 					} 
 				]
 			}
